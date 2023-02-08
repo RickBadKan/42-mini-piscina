@@ -1,0 +1,19 @@
+{% extends 'ex01/base.html' %}
+{% block title %}
+<title>Ex01: Display process of a static page.</title>
+{% endblock title %} 
+{% block content %}
+<h1>Django Display Summary</h1>
+<p>
+  When a static page is called, the URL is passed to the 'urls.py' and verified if it is listed in 'urlpatterns'. If so, then it's redirected
+  to the specified location in the same list.
+</p>
+<p>
+  Once inside the app, a similar process occurs: the 'urls.py' file verify any aditional path in the URL listed in 'urlpatterns'. After that,
+  the specified function in the list is called, in the 'views.py' file.
+</p>
+<p>
+    At this point, the respective function than returns a template loaded and a 'HttpResponse' is called with the 'template.render' method,
+    which renders the template with all the Django parsing magic!
+</p>
+{% endblock content %}

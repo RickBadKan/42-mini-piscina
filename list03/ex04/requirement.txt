@@ -1,0 +1,3 @@
+###### Requirements without Version Specifiers (latest) ######
+psycopg2-binary
+Django

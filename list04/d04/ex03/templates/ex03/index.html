@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ex03: 50 shades</title>
+    <style>
+      td,
+      th {
+        width: 80px;
+        height: 40px;
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Ex03: 50 shades</h1>
+    <div>
+      <table>
+        <tr>
+          <th style="color: black">Black <em>(noir)</em></th>
+          <th style="color: red">Red <em>(rouge)</em></th>
+          <th style="color: blue">Blue <em>(bleu)</em></th>
+          <th style="color: green">Green <em>(vert)</em></th>
+        </tr>
+        {% for hex in shades %}
+        <tr>
+          <td style="background-color: #{{hex}}{{hex}}{{hex}}"></td>
+          <td style="background-color: #FF{{hex}}{{hex}}"></td>
+          <td style="background-color: #{{hex}}{{hex}}FF"></td>
+          <td style="background-color: #{{hex}}FF{{hex}}"></td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </body>
+</html>

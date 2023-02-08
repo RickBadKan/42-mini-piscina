@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu formulário da 42 :)</title>
+    <script src="./popup.js"></script>
+  </head>
+  <body>
+    <form>
+      <label for="firstname">Firstname:</label><br>
+      <input type="text" id="firstname" name="firstname"><br>
+
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name"><br>
+
+      <label for="age">Age:</label><br>
+      <input type="number" id="age" name="age"><br>
+
+      <label for="phone">Phone:</label><br>
+      <input type="tel" id="phone" name="phone"><br>
+
+      <label for="email">E-mail:</label><br>
+      <input type="email" id="email" name="email"><br>
+
+      <label for="student">Student at 42?</label>
+      <input type="checkbox" id="student" name="student" value="Yes"><br>
+    
+      <label >Gender:</label><br>
+      <input type="radio" id="gender_male" name="gender" value="Male">
+      <label for="gender_male">Male</label>
+      <input type="radio" id="gender_female" name="gender" value="Female">
+      <label for="gender_female">Female</label>
+      <input type="radio" id="gender_other" name="gender" value="Other">
+      <label for="gender_other">Other</label><br>
+
+      <input type="submit" value="Roda roda roda rodaaaaa!" onclick="displayFormContents();">
+    </form>
+  </body>
+</html>

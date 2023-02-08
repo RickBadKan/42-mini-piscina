@@ -1,0 +1,19 @@
+{% extends 'ex02/base.html' %}
+
+{% block title %}
+<title>My First Django Form!</title>
+{% endblock title %}
+
+{% block content %}
+<h1>PlainText Form</h1>
+<form action="" method="post">
+  {% csrf_token %} 
+  {{ form.as_table }}
+  <input type="submit" value="Submit" />
+</form>
+<h1>Form History:</h1>
+{% for log in logs reversed %}
+<p>{{ log }}</p>
+{% endfor %} 
+
+{% endblock content %}

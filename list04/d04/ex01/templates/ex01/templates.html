@@ -1,0 +1,113 @@
+{% extends 'ex01/base.html' %} {% load static %}
+{% block title %}
+<title>Ex01: Template engine.</title>
+{% endblock title %}
+{% block style %}
+<link rel="stylesheet" type="text/css" href="{% static 'style2.css' %}" />
+{% endblock style %}
+{% block content %}
+<h1>Django's Default Template Engine</h1>
+<p>
+  Being a web framework, Django needs a convenient way to generate HTML
+  dynamically. The most common approach relies on templates. A template contains
+  the static parts of the desired HTML output as well as some special syntax
+  describing how dynamic content will be inserted.
+</p>
+<p>
+  A Django project can be configured with one or several template engines (or
+  even zero if you don't use templates). Django ships built-in backends for its
+  own template system, creatively called the Django template language (DTL), and
+  for the popular alternative Jinja2. Backends for other template languages may
+  be available from third-parties. You can also write your own custom backend!
+</p>
+<p>
+  Django defines a standard API for loading and rendering templates regardless
+  of the backend. Loading consists of finding the template for a given
+  identifier and preprocessing it, usually compiling it to an in-memory
+  representation. Rendering means interpolating the template with context data
+  and returning the resulting string.
+</p>
+<p>
+  The Django template language is Django's own template system. Until Django 1.8
+  it was the only built-in option available. It's a good template library even
+  though it's fairly opinionated and sports a few idiosyncrasies. If you don't
+  have a pressing reason to choose another backend, you should use the DTL,
+  especially if you're writing a pluggable application and you intend to
+  distribute templates. Django's contrib apps that include templates, like
+  <code>django.contrib.admin</code>, use the DTL.
+</p>
+<p>
+  For historical reasons, both the generic support for template engines and the
+  implementation of the Django template language live in the
+  <code>django.template</code>
+  namespace.
+</p>
+<hr />
+<h1>Advanced Template Usage</h1>
+<h2>Blocks</h2>
+<p>The <code>block</code> tag has two functions:</p>
+<ol>
+  <li>It is a placeholder for content.</li>
+  <li>It is content that will replace the placeholder.</li>
+</ol>
+<p>
+  In master templates the <code>block</code> tag is a placeholder that will be
+  replaced by a block in a child template with the same name.
+</p>
+<p>
+  In child templates the <code>block</code> tag is content that will replace the
+  placeholder in the master template with the same name.
+</p>
+
+<h2>Loops <code>for ... in</code>.</h2>
+<p>The <code>for</code> tag allows you to iterate over items in an object.</p>
+<p>
+  Objects can be array-like objects like a Python list or object-like objects
+  like a Python dictionary.
+</p>
+
+<h2><code>if</code> control structures</h2>
+<p>The <code>if</code> tag allows you to write conditional statements.</p>
+
+<p>
+  Use <code>if</code> statements to output a block of code if a condition is
+  true.
+</p>
+<p>
+  You can use <code>else</code> or <code>elif</code> (short for "else if") to
+  specify what to do when the <code>if</code> condition is false.
+</p>
+
+<h2><code>if</code> control structures</h2>
+<p>
+  Once you have a compiled Template object, you can render a context with it.
+  You can reuse the same template to render it several times with different
+  contexts.
+  <br />
+  <code>Context(dict_=None)</code>
+</p>
+<p>
+  The constructor of <code>django.template.Context</code> takes an optional
+  argument — a dictionary mapping variable names to variable values.
+  <br />
+  <code>Template.render(context)</code>
+  <br />
+  Call the Template object's render() method with a Context to “fill” the
+  template:
+  <br />
+  <code>
+    >>> from django.template import Context, Template
+    <br />
+    >>> template = Template("My name is {{ my_name }}.")
+    <br />
+    >>> context = Context({"my_name": "Adrian"})
+    <br />
+    >>> template.render(context) "My name is Adrian."
+    <br />
+    >>> context = Context({"my_name": "Dolores"})
+    <br />
+    >>> template.render(context) "My name is Dolores."
+  </code>
+</p>
+
+{% endblock content %}
