@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX02</title>
+</head>
+<body>
+    <h1>INSERTs OK:</h1>
+    {% for oks in inserts_ok %}
+    <p>OK: {{ oks }}</p>
+    {% endfor %}
+    <h1>INSERTs NOK:</h1>
+    {% for noks in inserts_nok %}
+    <p>NOK: {{ noks }}</p>
+    {% endfor %}
+</body>
+</html>
